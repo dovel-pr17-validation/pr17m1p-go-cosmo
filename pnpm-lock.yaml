@@ -179,8 +179,8 @@ importers:
         specifier: ^0.22.4
         version: 0.22.4(@codemirror/language@6.0.0)(@types/node@22.17.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(graphql-ws@6.0.6(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(ws@8.21.0))(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@graphiql/toolkit':
-        specifier: ^0.9.1
-        version: 0.9.1(@types/node@22.17.0)(graphql-ws@6.0.6(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(ws@8.21.0))(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))
+        specifier: ^1.0.0
+        version: 1.0.0(@types/node@22.17.0)(graphql-ws@6.0.6(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(ws@8.21.0))(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))
       graphiql:
         specifier: ^3.3.2
         version: 3.3.2(@codemirror/language@6.0.0)(@types/node@22.17.0)(@types/react-dom@18.3.0)(@types/react@18.3.3)(graphql-ws@6.0.6(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(ws@8.21.0))(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(react@18.3.1)
@@ -3467,6 +3467,15 @@ packages:
 
   '@graphiql/toolkit@0.9.1':
     resolution: {integrity: sha512-LVt9pdk0830so50ZnU2Znb2rclcoWznG8r8asqAENzV0U1FM1kuY0sdPpc/rBc9MmmNgnB6A+WZzDhq6dbhTHA==}
+    peerDependencies:
+      graphql: 16.9.0
+      graphql-ws: '>= 4.5.0'
+    peerDependenciesMeta:
+      graphql-ws:
+        optional: true
+
+  '@graphiql/toolkit@1.0.0':
+    resolution: {integrity: sha512-8dBBEUMH53WzMhQ0v0srMHZe6TgdNm/y2jzNrKTtSQqSC4pkPHMwjlkfhBmNPfMTUDlyq2yjy6UjwUbrwilLnw==}
     peerDependencies:
       graphql: 16.9.0
       graphql-ws: '>= 4.5.0'
@@ -7030,6 +7039,9 @@ packages:
   '@smithy/smithy-client@4.11.7':
     resolution: {integrity: sha512-gQP2J3qB/Wmc26gdmB8gA6zq2o2spG5sEU3o7TaTATBJEk29sYGWdEFoGEy91BczSpifTo0DQhVYjZXBEVcrpA==}
     engines: {node: '>=18.0.0'}
+    deprecated: |-
+      Deprecated due to a bug in custom logger data redaction. Upgrade to the latest version. If you used a custom logger with
+        this version, review your logs and rotate any credentials or other secrets. See https://github.com/aws/aws-sdk-js-v3/issues/8393.
 
   '@smithy/types@4.12.1':
     resolution: {integrity: sha512-ow30Ze/DD02KH2p0eMyIF2+qJzGyNb0kFrnTRtPpuOkQ4hrgvLdaU4YC6r/K8aOrCML4FH0Cmm0aI4503L1Hwg==}
@@ -17142,6 +17154,16 @@ snapshots:
       - graphql-ws
 
   '@graphiql/toolkit@0.9.1(@types/node@22.17.0)(graphql-ws@6.0.6(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(ws@8.21.0))(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))':
+    dependencies:
+      '@n1ru4l/push-pull-async-iterable-iterator': 3.2.0
+      graphql: 16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f)
+      meros: 1.3.0(@types/node@22.17.0)
+    optionalDependencies:
+      graphql-ws: 6.0.6(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(ws@8.21.0)
+    transitivePeerDependencies:
+      - '@types/node'
+
+  '@graphiql/toolkit@1.0.0(@types/node@22.17.0)(graphql-ws@6.0.6(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))(ws@8.21.0))(graphql@16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f))':
     dependencies:
       '@n1ru4l/push-pull-async-iterable-iterator': 3.2.0
       graphql: 16.9.0(patch_hash=5d5a536f5d50c101aa252296c4351a7ac6440bf4af8c1d19657a2234c50c193f)
